@@ -5,7 +5,6 @@ function addTask(Item){
     ToDoList.push(Item);
     console.log("Item Added in the List");
 }
-
 function removeTask(Index){
     let Length = ToDoList.length;
     if(Index >= 0 && Index < Length){
@@ -15,14 +14,17 @@ function removeTask(Index){
         console.log("Error! Invalid index.");
     }
 }
-
 function displayTask(){
     let Length = ToDoList.length;
-    for(let i = 0; i < Length; i++){
-        console.log("List: " + ToDoList[i] + " Index: " + i);
+    if(Length == 0){
+        console.log("No tasks to display!")
+    }else{
+        for(let i = 0; i < Length; i++){
+            console.log("List: " + ToDoList[i] + " Index: " + i);
+        }
     }
+    
 }
-
 function clearList(){
     ToDoList = [];
     console.log("The to-do list has been cleared!");
